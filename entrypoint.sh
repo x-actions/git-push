@@ -24,11 +24,11 @@ if ! git config --get user.email; then
 fi
 
 echo "## Setup Deploy keys ##################"
-mkdir /root/.ssh
-ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
-echo ${DEPLOY_PRIVATE_KEY} > /root/.ssh/id_rsa
-chmod 400 /root/.ssh/id_rsa
-ls -lhart /root/.ssh/id_rsa
+mkdir /root/.ssh && \
+ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts && \
+echo ${DEPLOY_PRIVATE_KEY} > /root/.ssh/id_rsa && \
+chmod 400 /root/.ssh/id_rsa && \
+ls -lhart /root/.ssh/id_rsa && \
 cat /root/.ssh/id_rsa
 
 echo "## Push to Github ##################"

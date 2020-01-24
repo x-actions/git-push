@@ -6,7 +6,13 @@ A Github Action to build [`hugo`](https://gohugo.io/) static sites.
 
 - GITHUB_EMAIL: git use email
 - GITHUB_USERNAME: git use username
-- HUGO_THEME_URL: hugo theme url[not use]
+- PUBLISH_REPO: hugo theme url[not use]
+- PUBLISH_BRANCH: github branch
+- PUBLISH_DIR: dir to publish
+
+## Secrets
+
+- DEPLOY_PRIVATE_KEY: Required your deploy key which has Write access
 
 ## How to Use
 
@@ -16,7 +22,7 @@ A Github Action to build [`hugo`](https://gohugo.io/) static sites.
       env:
         GITHUB_EMAIL: "me@xiexianbin.cn"
         GITHUB_USERNAME: "xiexianbin"
-        PUBLISH_REPO: git@github.com:owner/repo.git
+        PUBLISH_REPO: https://${{ secrets.GitHub_PAT }}@github.com/owner/repo.git
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./public
         DEPLOY_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
