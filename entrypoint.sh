@@ -34,13 +34,13 @@ rm -rf .git
 cd ${PUBLISH_DIR}
 
 if [[ -n "${CNAME}" ]]; then
-    echo 'Creating CNAME file'
-    echo "${CNAME}" > CNAME
+  echo 'Creating CNAME file'
+  echo "${CNAME}" > CNAME
 fi
 
 git init
 git add . && \
-git commit -m "update at $(date "+%Y-%m-%d %T")  - by hugo actions" && \
-git push --force "${PUBLISH_REPO}" master:master
+git commit -m "update at $(date "+%Y-%m-%d %T")  - by github actions" && \
+git push --force "${PUBLISH_REPO}" master:${PUBLISH_BRANCH}
 
 echo "## Done. ##################"
