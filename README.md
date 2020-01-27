@@ -1,6 +1,6 @@
-# Github Action for Hugo
+# Github Action for git push
 
-A Github Action to build [`hugo`](https://gohugo.io/) static sites.
+A Github Action to push code to git, like [`gitpage`](https://pages.github.com/).
 
 ## Environment Variables
 
