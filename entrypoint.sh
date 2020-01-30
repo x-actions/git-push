@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 set -e
 
 GITHUB_EMAIL=${GITHUB_EMAIL:-"me@xiexianbin.cn"}
@@ -56,6 +57,6 @@ git remote -v
 git branch | grep ${PUBLISH_BRANCH} || git checkout ${PUBLISH_BRANCH} || git branch ${PUBLISH_BRANCH} && git checkout ${PUBLISH_BRANCH}
 git add . && \
 git commit -m "update at $(date "+%Y-%m-%d %T") - by github actions" && \
-git push --set-upstream origin ${PUBLISH_BRANCH} --force
+git push --set-upstream origin ${PUBLISH_BRANCH} --force -vvv
 
 echo "## Done. ##################"
