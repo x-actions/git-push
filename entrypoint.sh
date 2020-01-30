@@ -48,6 +48,9 @@ fi
 
 if [ ! -d ".git" ];then
   git init
+  touch README.md
+  git add README.md
+  git commit -m "init README.md at $(date "+%Y-%m-%d %T") - by github actions"
 else
   git remote -v
   git remote rm origin || true
