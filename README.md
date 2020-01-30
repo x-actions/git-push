@@ -12,7 +12,7 @@ A Github Action to push code to git, like [`gitpage`](https://pages.github.com/)
 
 ## Secrets
 
-- DEPLOY_PRIVATE_KEY: Required your deploy key which has Write access
+# - DEPLOY_PRIVATE_KEY: Required your deploy key which has Write access
 
 ## How to Use
 
@@ -25,5 +25,5 @@ A Github Action to push code to git, like [`gitpage`](https://pages.github.com/)
         PUBLISH_REPO: https://${{ secrets.GitHub_PAT }}@github.com/owner/repo.git
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./public
-        DEPLOY_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+        # DEPLOY_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
 ```

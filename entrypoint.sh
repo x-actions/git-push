@@ -25,11 +25,16 @@ fi
 
 echo "## Setup Deploy keys ##################"
 mkdir /root/.ssh && \
-ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts && \
-echo ${DEPLOY_PRIVATE_KEY} > /root/.ssh/id_rsa && \
-chmod 400 /root/.ssh/id_rsa && \
-ls -lhart /root/.ssh/id_rsa && \
-cat /root/.ssh/id_rsa
+ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts
+
+if [ X"$DEPLOY_PRIVATE_KEY" = X"" ]; then
+  echo "## Skip ssh key deploy ##################"
+else
+  echo ${DEPLOY_PRIVATE_KEY} > /root/.ssh/id_rsa
+  chmod 400 /root/.ssh/id_rsa && \
+  ls -lhart /root/.ssh/id_rsa && \
+  cat /root/.ssh/id_rsa
+fi
 
 echo "## Push to Github ##################"
 rm -rf .git
@@ -40,9 +45,16 @@ if [[ -n "${CNAME}" ]]; then
   echo "${CNAME}" > CNAME
 fi
 
-git init
+if [ ! -d ".git" ];then
+  git init
+else
+  git remote -v
+  git remote rm origin || true
+fi
+git remote add origin "${PUBLISH_REPO}"
+git remote -v
 git add . && \
-git commit -m "update at $(date "+%Y-%m-%d %T")  - by github actions" && \
-git push --force "${PUBLISH_REPO}" master:${PUBLISH_BRANCH}
+git commit -m "update at $(date "+%Y-%m-%d %T") - by github actions" && \
+git push --set-upstream origin ${PUBLISH_BRANCH} --force
 
 echo "## Done. ##################"
