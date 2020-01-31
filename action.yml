@@ -1,5 +1,5 @@
-name: 'Git Push'
-description: 'Git push Action'
+name: 'Git Push Action'
+description: 'Git Push Action'
 author: 'xiexianbin <me@xiexianbin>'
 inputs: 
   GITHUB_EMAIL:
