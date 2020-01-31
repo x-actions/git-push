@@ -19,7 +19,7 @@ jobs:
         echo $(date) >> ${ci_dir}/date.txt
 
     - name: Push to Github
-      uses: x-actions/git-push@master
+      uses: x-actions/git-push@release/v1
       env:
         GITHUB_EMAIL: "me@xiexianbin.cn"
         GITHUB_USERNAME: "xiexianbin"

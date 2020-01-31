@@ -18,7 +18,7 @@ A Github Action to push code to git, like [`gitpage`](https://pages.github.com/)
 
 ```
     - name: Push to Github
-      uses: x-actions/gh-pages@master
+      uses: x-actions/gh-pages@release/v1
       env:
         GITHUB_EMAIL: "me@xiexianbin.cn"
         GITHUB_USERNAME: "xiexianbin"
