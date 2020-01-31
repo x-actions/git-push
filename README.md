@@ -12,7 +12,7 @@ A Github Action to push code to git, like [`gitpage`](https://pages.github.com/)
 
 ## Secrets
 
-# - DEPLOY_PRIVATE_KEY: Required your deploy key which has Write access
+- DEPLOY_PRIVATE_KEY: Required your deploy key which has Write access
 
 ## How to Use
 
