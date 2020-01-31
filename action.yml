@@ -9,7 +9,7 @@ inputs:
     description: 'git use username'
     default: "me@xiexianbin.cn"
   PUBLISH_REPO:
-    description: 'https://${{ secrets.GitHub_PAT }}@github.com/owner/repo.git'
+    description: 'https:/<token>@github.com/owner/repo.git'
   PUBLISH_BRANCH:
     description: 'git branch'
   PUBLISH_DIR:
