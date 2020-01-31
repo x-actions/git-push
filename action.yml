@@ -1,0 +1,23 @@
+name: 'Gitpush'
+description: 'Git push Action'
+author: 'xiexianbin <me@xiexianbin>'
+inputs: 
+  GITHUB_EMAIL:
+    description: 'git user email'
+    default: "xiexianbin"
+  GITHUB_USERNAME:
+    description: 'git use username'
+    default: "me@xiexianbin.cn"
+  PUBLISH_REPO:
+    description: 'https://${{ secrets.GitHub_PAT }}@github.com/owner/repo.git'
+  PUBLISH_BRANCH:
+    description: 'git branch'
+  PUBLISH_DIR:
+    description: 'dir to publish'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  color: "blue"
+  icon: "code"

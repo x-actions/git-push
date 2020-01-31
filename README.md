@@ -1,13 +1,13 @@
-# Github Action for git push
+# Git push Action
 
 A Github Action to push code to git, like [`gitpage`](https://pages.github.com/).
 
 ## Environment Variables
 
-- GITHUB_EMAIL: git use email
-- GITHUB_USERNAME: git use username
+- GITHUB_EMAIL: git user email
+- GITHUB_USERNAME: git user username
 - PUBLISH_REPO: hugo theme url[not use]
-- PUBLISH_BRANCH: github branch
+- PUBLISH_BRANCH: git branch
 - PUBLISH_DIR: dir to publish
 
 ## Secrets
