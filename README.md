@@ -1,4 +1,4 @@
-# Git push Action
+# Git Push Action
 
 A Github Action to push code to git, like [`gitpage`](https://pages.github.com/).
 
@@ -17,7 +17,7 @@ A Github Action to push code to git, like [`gitpage`](https://pages.github.com/)
 ## How to Use
 
 ```
-    - name: Push to Github
+    - name: Git Push Action
       uses: x-actions/gh-pages@master
       env:
         GITHUB_EMAIL: "me@xiexianbin.cn"
