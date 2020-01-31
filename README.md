@@ -6,7 +6,7 @@ A Github Action to push code to git, like [`gitpage`](https://pages.github.com/)
 
 - GITHUB_EMAIL: git user email
 - GITHUB_USERNAME: git user username
-- PUBLISH_REPO: repo url, https://${{ secrets.GitHub_PAT }}@github.com/owner/repo.git
+- PUBLISH_REPO: repo url, `https://${{ secrets.GitHub_PAT }}@github.com/owner/repo.git`
 - PUBLISH_BRANCH: git branch
 - PUBLISH_DIR: dir to publish
 
@@ -17,8 +17,8 @@ A Github Action to push code to git, like [`gitpage`](https://pages.github.com/)
 ## How to Use
 
 ```
-    - name: Git Push Action
-      uses: x-actions/gh-pages@master
+    - name: Push to Github
+      uses: x-actions/gh-pages@release/v1
       env:
         GITHUB_EMAIL: "me@xiexianbin.cn"
         GITHUB_USERNAME: "xiexianbin"
