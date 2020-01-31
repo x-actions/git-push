@@ -1,4 +1,4 @@
-name: 'Gitpush'
+name: 'Git Push'
 description: 'Git push Action'
 author: 'xiexianbin <me@xiexianbin>'
 inputs: 
