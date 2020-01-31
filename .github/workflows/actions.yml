@@ -11,7 +11,12 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: Change Code
-      run: echo $(date) >> date.txt
+      run: |
+        ci_dir="git-push"
+        if [ ! -d "$ci_dir" ]; then
+          mkdir $ci_dir
+        fi
+        echo $(date) >> ${ci_dir}/date.txt
 
     - name: Push to Github
       uses: x-actions/git-push@master
@@ -20,4 +25,4 @@ jobs:
         GITHUB_USERNAME: "xiexianbin"
         PUBLISH_REPO: https://${{ secrets.GitHub_PAT }}@github.com/x-actions/ci.git
         PUBLISH_BRANCH: git-push
-        PUBLISH_DIR: .
+        PUBLISH_DIR: ./git-push
