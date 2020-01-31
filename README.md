@@ -6,13 +6,13 @@ A Github Action to push code to git, like [`gitpage`](https://pages.github.com/)
 
 - GITHUB_EMAIL: git user email
 - GITHUB_USERNAME: git user username
-- PUBLISH_REPO: hugo theme url[not use]
+- PUBLISH_REPO: repo url, https://${{ secrets.GitHub_PAT }}@github.com/owner/repo.git
 - PUBLISH_BRANCH: git branch
 - PUBLISH_DIR: dir to publish
 
 ## Secrets
 
-- DEPLOY_PRIVATE_KEY: Required your deploy key which has Write access
+- DEPLOY_PRIVATE_KEY: Required your deploy key which has Write access[not use]
 
 ## How to Use
 
