@@ -24,6 +24,8 @@ if ! git config --get user.email; then
     git config --global user.email "${GITHUB_EMAIL}"
 fi
 
+git config --global --add safe.directory /github/workspace/${PUBLISH_DIR}
+
 echo "## Setup Deploy keys ##################"
 mkdir /root/.ssh && \
 ssh-keyscan -t rsa github.com > /root/.ssh/known_hosts

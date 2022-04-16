@@ -19,10 +19,10 @@ jobs:
         echo $(date) >> ${ci_dir}/date.txt
 
     - name: Push to Github
-      uses: x-actions/git-push@release/v1
+      uses: x-actions/git-push@v1
       env:
         GITHUB_EMAIL: "me@xiexianbin.cn"
         GITHUB_USERNAME: "xiexianbin"
-        PUBLISH_REPO: https://${{ secrets.GitHub_PAT }}@github.com/x-actions/ci.git
+        PUBLISH_REPO: https://${{ secrets.TOKEN }}@github.com/x-actions/ci.git
         PUBLISH_BRANCH: git-push
-        PUBLISH_DIR: ./git-push
+        PUBLISH_DIR: git-push
