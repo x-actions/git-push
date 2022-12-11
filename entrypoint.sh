@@ -63,5 +63,9 @@ git branch | grep ${PUBLISH_BRANCH} || git checkout ${PUBLISH_BRANCH} || git bra
 git add . && \
 git commit -m "update at $(date "+%Y-%m-%d %T") - by github actions" && \
 git push --set-upstream origin ${PUBLISH_BRANCH} --force -vvv
+if [ $? -ne 0 ]; then
+  git pull --rebase origin ${PUBLISH_BRANCH}
+  git push --set-upstream origin ${PUBLISH_BRANCH} --force -vvv
+fi
 
 echo "## Done. ##################"
