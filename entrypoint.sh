@@ -61,7 +61,7 @@ git remote add origin "${PUBLISH_REPO}"
 git remote -v
 git branch | grep ${PUBLISH_BRANCH} || git checkout ${PUBLISH_BRANCH} || git branch ${PUBLISH_BRANCH} && git checkout ${PUBLISH_BRANCH}
 git add . && \
-git commit -m "update at $(date "+%Y-%m-%d %T") - by github actions" && \
+git commit -m "update at $(date "+%Y-%m-%d %T") - by github actions"
 git push --set-upstream origin ${PUBLISH_BRANCH} --force -vvv
 if [ $? -ne 0 ]; then
   git pull --rebase origin ${PUBLISH_BRANCH}
